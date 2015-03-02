@@ -113,7 +113,8 @@ namespace DarkMultiPlayerServer
                     //Load universe
                     DarkLog.Normal("Loading universe... ");
                     CheckUniverse();
-                    PermissionSystem.Core.InitializePermissionFolder();
+                    // OUTDATED SINCE MIGRATION TO SEPERATE DLL FILES
+                    //PermissionSystem.PermissionSystemAccess.InitializePermissionFolder();
                     DarkLog.Normal("Done!");
 
                     DarkLog.Normal("Starting " + Settings.settingsStore.warpMode + " server on port " + Settings.settingsStore.port + "... ");
@@ -129,7 +130,8 @@ namespace DarkMultiPlayerServer
                     }
                     DarkLog.Normal("Done!");
                     DarkLog.Normal("Starting Syntaxcodes Permissions System..");
-                    PermissionSystem.Core permissionsystems = new PermissionSystem.Core(); 
+                    // OUTDATED SINCE MIGRATION TO SEPERATE DLL FILES
+                    //PermissionSystem.PermissionSystemCore permissionsystems = new PermissionSystem.PermissionSystemCore(); 
                     DarkLog.Normal("Starting Syntaxcodes Permissions System started.");
                     StartHTTPServer();
                     DarkLog.Normal("Done!");
@@ -290,7 +292,8 @@ namespace DarkMultiPlayerServer
             }
             serverStarting = false;
             serverRunning = false;
-            PermissionSystem.Core.SaveToFile(); // Added to save all current memory data in respect to the permissions system
+            // OUTDATED SINCE MIGRATION TO SEPERATE DLL FILES
+            //PermissionSystemAccess.SaveToFile(); // Added to save all current memory data in respect to the permissions system
             StopHTTPServer();
         }
         //Restart
@@ -309,7 +312,8 @@ namespace DarkMultiPlayerServer
             serverRestarting = true;
             serverStarting = false;
             serverRunning = false;
-            PermissionSystem.Core.SaveToFile(); // Added to save all current memory data in respect to the permissions system 
+            // OUTDATED SINCE MIGRATION TO SEPERATE DLL FILES
+            //PermissionSystemAccess.SaveToFile(); // Added to save all current memory data in respect to the permissions system 
             ForceStopHTTPServer();
         }
         //Gracefully shut down

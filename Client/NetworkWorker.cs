@@ -826,10 +826,11 @@ namespace DarkMultiPlayer
                     case ServerMessageType.CONNECTION_END:
                         HandleConnectionEnd(message.data);
                         break;
-                    case ServerMessageType.SYNTAX_BRIDGE: // Syntax permission system implementation, relaying the message to keep it clean here
-                        PermissionSystem.SyntaxPermissionSystem.PermissionSystemResponseHandler(message);
-                        //PermissionSystem.SyntaxPermissionSystem.PermissionCheckResponse(message); // Outdated since usage of own switch
-                        break;
+                        // OUTDATED SINCE MIGRATION TO SEPERATE DLL FILES
+                    //case ServerMessageType.SYNTAX_BRIDGE: // Syntax permission system implementation, relaying the message to keep it clean here
+                    //    PermissionSystem.SyntaxPermissionSystem.PermissionSystemResponseHandler(message);
+                    //    //PermissionSystem.SyntaxPermissionSystem.PermissionCheckResponse(message); // Outdated since usage of own switch
+                    //    break;
                     default:
                         DarkLog.Debug("Unhandled message type " + message.type);
                         break;
@@ -841,21 +842,7 @@ namespace DarkMultiPlayer
                 SendDisconnect("Error handling " + message.type + " message");
             }
         }
-
-        internal void SendPermissionClaimRequest(byte[] messageData)
-        {
-            ClientMessage newMessage = new ClientMessage();
-            newMessage.type = ClientMessageType.SYNTAX_BRIDGE;
-            newMessage.data = messageData;
-            NetworkWorker.fetch.QueueOutgoingMessage(newMessage, true);
-        }
-        internal void SendPermissionRequest(byte[] messageData)
-        {
-            ClientMessage newMessage = new ClientMessage();
-            newMessage.type = ClientMessageType.SYNTAX_BRIDGE;
-            newMessage.data = messageData;
-            NetworkWorker.fetch.QueueOutgoingMessage(newMessage, true);
-        }
+        
         private void HandleHandshakeChallange(byte[] messageData)
         {
             try
@@ -1097,7 +1084,7 @@ namespace DarkMultiPlayer
                 ChatWorker.fetch.QueueChannelMessage(ChatWorker.fetch.consoleIdentifier, "", playerName + " has joined the server");
             }
         }
-
+        
         private void HandlePlayerDisconnect(byte[] messageData)
         {
             using (MessageReader mr = new MessageReader(messageData))

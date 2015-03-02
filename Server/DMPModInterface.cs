@@ -30,8 +30,8 @@ namespace DarkMultiPlayerServer
                     DarkLog.Debug("Failed to register mod handler for " + modName + ", mod already registered");
                     return false;
                 }
-                DarkLog.Debug("Registered mod handler for " + modName);
                 registeredMods.Add(modName, handlerFunction);
+                DarkLog.Debug("Registered mod handler for " + modName);
             }
             return true;
         }

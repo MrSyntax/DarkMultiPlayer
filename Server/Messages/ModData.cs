@@ -4,7 +4,7 @@ using MessageStream2;
 
 namespace DarkMultiPlayerServer.Messages
 {
-    public class ModData
+    public static class ModData
     {
         public static void HandleModDataMessage(ClientObject client, byte[] messageData)
         {

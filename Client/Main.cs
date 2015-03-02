@@ -41,7 +41,7 @@ namespace DarkMultiPlayer
         private Dictionary<CelestialBody, double> bodiesGees = new Dictionary<CelestialBody,double>();
         //Command line connect
         public static ServerEntry commandLineConnect;
-
+        
         // Server setting
         public GameDifficulty serverDifficulty;
         public GameParameters serverParameters;

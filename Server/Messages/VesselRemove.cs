@@ -16,12 +16,13 @@ namespace DarkMultiPlayerServer.Messages
                 mr.Read<double>();
                 string vesselID = mr.Read<string>();
                 bool isDockingUpdate = mr.Read<bool>();
-                if (!PermissionSystem.Core.PVessel.IsOwner(client.playerName, client.activeVessel))
-                {
-                    client.disconnectClient = true;
-                    ClientHandler.DisconnectClient(client);
-                    return;
-                }
+                // OUTDATED SINCE MIGRATION TO SEPERATE DLL FILES
+                //if (!PermissionSystem.PermissionSystemAccess.PVessel.IsOwner(client.playerName, client.activeVessel))
+                //{
+               //     client.disconnectClient = true;
+                //    ClientHandler.DisconnectClient(client);
+                //    return;
+                //}
                 if (!isDockingUpdate)
                 {
                     DarkLog.Debug("Removing vessel " + vesselID + " from " + client.playerName);

@@ -82,7 +82,8 @@ namespace DarkMultiPlayer
             RegisterChatCommand("motd", ServerMOTD, "Gets the current Message of the Day");
             RegisterChatCommand("resize", ResizeChat, "Resized the chat window");
             RegisterChatCommand("version", DisplayVersion, "Displays the current version of DMP");
-            RegisterChatCommand("claim", ClaimVessel, "Claims the current vessel. Format: /claim [personal/group] [private/public]");
+            // Syntax codes
+            
         }
 
         private void PrintToSelectedChannel(string text)
@@ -105,16 +106,6 @@ namespace DarkMultiPlayer
             }
         }
 
-        private void ClaimVessel(string commandArgs)
-        {
-            string[] args = commandArgs.Split(' ');
-            string playername = Settings.fetch.playerName;
-            string personalOrGroup = args[0];
-            string privateOrPublic = args[1];
-            string vesselid = FlightGlobals.ActiveVessel.id.ToString();
-            PermissionSystem.SyntaxPermissionSystem.PermissionClaim(playername, personalOrGroup, privateOrPublic, vesselid);
-            
-        }
 
         private void DisplayHelp(string commandArgs)
         {
@@ -414,7 +405,22 @@ namespace DarkMultiPlayer
             }
         }
 
-        
+        public static void RegisterPluginChatCommand(string command, Action<string> func, string description)
+        {
+            Action<string> pluginFunction = new Action<string>(PluginDoNothing);
+            if(func != null)
+            {
+                pluginFunction = func;
+                ChatCommand cmd = new ChatCommand(command, pluginFunction, description);
+                ChatWorker.singleton.registeredChatCommands.Add(command,cmd);
+                return;
+            }
+            else
+            {
+                return;
+            }
+        }
+        private static void PluginDoNothing(string functionString) { }
 
         public void HandleChatInput(string input)
         {

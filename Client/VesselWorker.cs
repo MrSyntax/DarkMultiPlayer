@@ -96,19 +96,14 @@ namespace DarkMultiPlayer
             }
         }
         
+        public string VesselDockedTo
+        {
+            get { return toDockedVesselID; }
+        }
+
         //Called from main
         public void Update()
         {
-            //if(!PermissionSystem.SyntaxPermissionSystem.OwnerVerified)
-            //{
-            //    Vessel vesselguid = FlightGlobals.ActiveVessel;
-            //    string playername = Settings.fetch.playerName;
-            //    if(vesselguid.id.ToString() != "" && vesselguid != null && playername != "" && playername != null)
-            //    {
-            //        PermissionSystem.SyntaxPermissionSystem.PermissionCheck(vesselguid, playername);
-            //    }
-            //}
-
             if (HighLogic.LoadedScene == GameScenes.LOADING)
             {
                 return;
@@ -126,8 +121,6 @@ namespace DarkMultiPlayer
 
                     return;
                 }
-                // Check if allowed to control vessel // outdated since usage of networkworker.fetch.sendvesselUpdate()
-                // PermissionSystem.SyntaxPermissionSystem.PermissionCheck(FlightGlobals.fetch.activeVessel, Settings.fetch.playerName);
             }
 
             //GameEvents.debugEvents = true;
@@ -956,9 +949,6 @@ namespace DarkMultiPlayer
 
             if (LockSystem.fetch.LockIsOurs("control-" + FlightGlobals.fetch.activeVessel.id.ToString()))
             {
-                // Syntax Permission System hooks in here
-                //PermissionSystem.SyntaxPermissionSystem.PermissionCheck(FlightGlobals.fetch.activeVessel, Settings.fetch.playerName);
-                
                 SendVesselUpdateIfNeeded(FlightGlobals.fetch.activeVessel);
             }
             SortedList<double, Vessel> secondryVessels = new SortedList<double, Vessel>();
@@ -977,7 +967,8 @@ namespace DarkMultiPlayer
                         bool updateLockIsOurs = LockSystem.fetch.LockIsOurs("update-" + checkVessel.id.ToString());
 
                         // Syntax Permission System hooks in here
-                        PermissionSystem.SyntaxPermissionSystem.PermissionCheck(FlightGlobals.fetch.activeVessel, Settings.fetch.playerName);
+                        // OUTDATED SINCE MIGRATION TO SEPERATE DLL FILES
+                        //PermissionSystem.SyntaxPermissionSystem.PermissionCheck(FlightGlobals.fetch.activeVessel, Settings.fetch.playerName);
                         
                         bool controlledByPlayer = LockSystem.fetch.LockExists("control-" + checkVessel.id.ToString());
                         if ((updateLockIsFree || updateLockIsOurs) && !controlledByPlayer)
@@ -1067,6 +1058,10 @@ namespace DarkMultiPlayer
             //Only send updates for craft we have update locks for. Request the lock if it's not taken.
             if (!LockSystem.fetch.LockExists("update-" + checkVessel.id.ToString()))
             {
+                // Syntax Anti Cheat System hooks in here
+                if(checkVessel.id != Guid.Empty)
+                AntiCheatSystemHandler.SendACCheck();
+
                 LockSystem.fetch.ThrottledAcquireLock("update-" + checkVessel.id.ToString());
                 //Wait until we have the update lock
                 return;
@@ -1156,10 +1151,11 @@ namespace DarkMultiPlayer
                 VesselUpdate update = VesselUpdate.CopyFromVessel(checkVessel);
                 if (update != null)
                 {
-                    if (PermissionSystem.SyntaxPermissionSystem.OwnerVerified)
-                    {
+                    // OUTDATED SINCE MIGRATION TO SEPERATE DLL FILES
+                    //if (PermissionSystem.SyntaxPermissionSystem.OwnerVerified)
+                    //{
                         NetworkWorker.fetch.SendVesselUpdate(update);
-                    }
+                    //}
                 }
             }
         }

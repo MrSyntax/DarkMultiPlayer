@@ -1,0 +1,20 @@
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\obj\Release\SyntaxServerMessageHandler.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\bin\Release\SyntaxServerMessageHandler.dll
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\bin\Release\SyntaxServerMessageHandler.pdb
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\bin\Release\AntiCheatSystemServer.dll
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\bin\Release\DarkMultiPlayer-Common.dll
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\bin\Release\DMPPermissionSystem.dll
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\bin\Release\DMPServer.exe
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\bin\Release\MessageWriter2.dll
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\bin\Release\AntiCheatSystemServer.pdb
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\bin\Release\DMPPermissionSystem.pdb
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\obj\Release\SyntaxServerMessageHandler.dll
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\obj\Release\SyntaxServerMessageHandler.pdb
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\bin\Release\SyntaxSystemsCommon.dll
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\SyntaxServerMessageHandler\bin\Release\SyntaxSystemsCommon.pdb
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\SyntaxPlugins\Server\SyntaxServerMessageHandler.dll
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\SyntaxPlugins\Server\SyntaxServerMessageHandler.pdb
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\github codes to share\SyntaxServerMessageHandler\obj\Release\SyntaxServerMessageHandler.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\github codes to share\SyntaxServerMessageHandler\obj\Release\SyntaxServerMessageHandler.dll
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\github codes to share\SyntaxServerMessageHandler\obj\Release\SyntaxServerMessageHandler.pdb

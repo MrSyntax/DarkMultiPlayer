@@ -1,0 +1,4 @@
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\TradingSystemCommon\bin\Release\TradingSystemCommon.dll
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\TradingSystemCommon\bin\Release\TradingSystemCommon.pdb
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\TradingSystemCommon\obj\Release\TradingSystemCommon.dll
+C:\Users\Admin\Desktop\Studie\DarkMultiPlayer-master\DarkMultiPlayer-master\TradingSystemCommon\obj\Release\TradingSystemCommon.pdb

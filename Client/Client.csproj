@@ -46,10 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AntiCheatSystemHandler.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="ConfigNodeSerializer.cs" />
-    <Compile Include="SyntaxPermissionSystem.cs" />
     <Compile Include="Utilities\CompatibilityChecker.cs" />
     <Compile Include="VesselWorker.cs" />
     <Compile Include="TimeSyncer.cs" />
@@ -88,6 +88,10 @@
     <Compile Include="ToolbarSupport.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AntiCheatSystem\AntiCheatSystemClient.csproj">
+      <Project>{02a3b863-501e-40a0-9771-b4b15fc4c2a4}</Project>
+      <Name>AntiCheatSystemClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common\DarkMultiPlayerCommon.csproj">
       <Project>{423C5A4B-EA79-450D-BD86-5B46141D58D1}</Project>
       <Name>DarkMultiPlayerCommon</Name>
